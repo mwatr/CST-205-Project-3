@@ -28,7 +28,21 @@ a {
 }
 /* Main elements end */
 
+.btn {
+  display: block;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid red;
+  margin: 0 auto;
 
+}
+.btn #flipButton {
+  color:white;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+}
 /*****************************************************************************
  * Various other styles
  ****************************************************************************/
