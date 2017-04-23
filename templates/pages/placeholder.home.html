@@ -1,9 +1,30 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-</script>
-<div class="page-header">
-  <h1 style="text-align:center">Blind Bites</h1>
-</div>
-<a class="btn" href="#"><div id="flipButton">Pick your doom</div></a>
+    <script type=text/javascript>
+      $(function() {
+        $(".btn").click(function() {
+            if (navigator.geolocation) {
+                //Uses this to run the AJAX call to the Yelp API
+                navigator.geolocation.getCurrentPosition(fetchYelpData);
+            } else {
+                console.log(":l");
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+
+            function fetchYelpData(position) {
+
+                console.log(position.coords.latitude + "\n" + position.coords.longitude);
+            }
+        })
+    });
+    </script>
+    <div class="header">
+      <h1 style="text-align:center; color:white; padding-bottom:5%l">Blind Bites</h1>
+    </div>
+    <div class="content jumbotron" style="padding-top:10%; padding-bottom:10%;border: 1px black solid;">
+        <a class="btn" href="#">
+            <div id="flipButton">Click me.</div>
+        </a>
+    </div>
 {% endblock %}
