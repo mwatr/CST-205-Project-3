@@ -1,5 +1,4 @@
-import cv2
-import numpy as np
+
 from PIL import Image, ImageFilter
 from PIL import ImageFont, ImageDraw
 #Read image
@@ -66,4 +65,4 @@ while safe == 1:
             img2 = image.rotate(-90)
         if spin == 3:
             img2 = image.rotate(180)
-img2.save("rotated_pic.jpg", "JPEG")
+        img2.save("rotated_pic.jpg", "JPEG")
