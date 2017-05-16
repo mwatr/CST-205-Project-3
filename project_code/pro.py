@@ -1,3 +1,4 @@
+#Project 3
 #Alejandro Casillas, Michael Waters, Conrado Aguilar
 from PIL import Image, ImageFilter              # This imports a specific section of a library
 from PIL import ImageFont, ImageDraw            # This imports a specific section of a library
