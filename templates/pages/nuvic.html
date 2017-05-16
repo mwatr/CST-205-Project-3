@@ -2,12 +2,18 @@
 {% block title %}Home{% endblock %}
 {% block content %}
     <script type=text/javascript>
-      $(function() {
-        $(".btn").click(function() {
-            if (navigator.geolocation) {
+      $(function() 
+      {
+        $(".btn").click(function() 
+        {
+            if (navigator.geolocation) 
+            {
                 //Uses this to run the AJAX call to the Yelp API
                 navigator.geolocation.getCurrentPosition(fetchYelpData);
-            } else {
+
+            } 
+            else 
+            {
                 console.log(":l");
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
@@ -19,26 +25,33 @@
                 console.log(position.coords.latitude + "\n" + position.coords.longitude);
             }
         });
-        $(".buddy").on("swiperight",function(){
+        $(".buddy").on("swiperight",function()
+        {
             $(this).addClass('rotate-left').delay(700).fadeOut(1);
             $('.buddy').find('.status').remove();
             $(this).append('<div class="status like">Like!</div>');
             if ( $(this).is(':last-child') ) {
                 $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-            } else {
+            } 
+            else 
+            {
                 $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
             }
         });
 
-        $(".buddy").on("swipeleft",function(){
+        $(".buddy").on("swipeleft",function()
+        {
             $(this).addClass('rotate-right').delay(700).fadeOut(1);
             $('.buddy').find('.status').remove();
             $(this).append('<div class="status dislike">Dislike!</div>');
 
-            if ( $(this).is(':last-child') ) {
+            if ( $(this).is(':last-child') ) 
+            {
                 $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
                 alert('OUPS');
-            } else {
+            } 
+            else 
+            {
                 $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
             }
         });
@@ -51,9 +64,43 @@
         <div class="inner-content">
             <div id="cardView" >
             </div>
+            <source src="static/music/simkey.mp3" type="audio/mp3">
+
             <a class="btn" href="#">
                 <div id="flipButton">Click me.....I'm shiny</div>
             </a>
+            
+        </div>
+    </div>   
+    
+    <div class="content jumbotron" style="padding-top:10%; padding-bottom:10%;border: 1px black solid;">
+        <div class="inner-content">
+            <div id="cardView" >
+            </div>
+            
+            <a class="btn" href="#">
+                <div id="flipButton">Cuice vi... vic sie</div>
+            </a>
+            
         </div>
     </div>
+        
+    <div class="content jumbotron" style="padding-top:10%; padding-bottom:10%;border: 1px black solid;">
+        <div class="inner-content">
+            <div id="cardView" >
+            </div>
+            
+            <a class="btn" href="#">
+                <div id="flipButton">Cuice vi... vic sie</div>
+            </a>
+            
+        </div>
+    </div>
+    
+    <div class="content jumbotron" style="padding-top:10%; padding-bottom:10%;border: 1px black solid;">
+        <button class = "button"> Hello </button>
+        
+    </div>
+    
+    {% block play%}{% endblock %}
 {% endblock %}

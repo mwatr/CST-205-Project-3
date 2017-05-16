@@ -40,11 +40,28 @@
 <!--[if lt IE 9]><script src="/static/js/libs/respond-1.4.2.min.js"></script><![endif]-->
 <!-- /scripts -->
 
+<!--/Seto button -->
+<style>
+.btn-group .button {
+    background-color: #FFFFFF; /* White */
+    border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-decoration: none;
+    float: left;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100px;
+    height: 100;
+    display: block;
+}
+</style>
+
 </head>
 <body>
 
   <!-- Wrap all page content here -->
-  <div id="wrap" style="background-color:#FF4C4C">
+  <div id="wrap" style="background-color:grey">
     <!-- Begin page content -->
     <main id="content" role="main" class="container">
 
@@ -60,10 +77,33 @@
       {% endwith %}
 
       {% block content %}{% endblock %}
+      
+          <div class="header">
+      <h1 style="text-align:center; color:white; padding-bottom:5%l">Testing area</h1>
+    </div>
+      <div class="text-center">
+        
+              <img src = "bun.jpg" alt ="Hello">      
 
+        <div class="btn-group" style="padding-top:4%; padding-bottom:4%;border: 1px black solid; align:center; background-color:white;">
+      <div class="inner-content" >
+    <button class="button">1</button>
+    <button class="button">2</button>
+    <button class="button">3</button>
+    <button class="button">4</button>
+    <button class="button">5</button>
+    <button class="button">6</button>
+    <button class="button">7</button>
+    <button class="button">8</button>
+  </div>
+</div>
+</div>
     </main>
+    
+
 
   </div>
+
 
 </body>
 </html>

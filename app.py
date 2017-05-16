@@ -1,16 +1,20 @@
 #----------------------------------------------------------------------------#
 # Imports
 #----------------------------------------------------------------------------#
-
+from flask import Flask, render_template, url_for
 from flask import Flask, render_template, request
+from playsound import playsound
+from flask import Flask, request, render_template
 # from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
 import os
+import pyglet
 
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
+music_dir = '/home/flask/flaskmedia/static/music'
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -19,11 +23,25 @@ app.config.from_object('config')
 # Controllers.
 #----------------------------------------------------------------------------#
 
-
 @app.route('/')
 def home():
-    return render_template('pages/placeholder.home.html')
+    return render_template('layouts/main.html')
 
+@app.route('/')
+def index():
+    music_files = [f for f in os.listdir(music_dir) if f.endswith('mp3')]
+    music_files_number = len(music_files)
+    return render_template('pages/nuvic.html',
+                        title = 'Home',
+                        music_files_number = music_files_number,
+                        music_files = music_files)
+                   
+                   
+@app.route('/show/bun.jpg')
+def uploaded_file(filename):
+    filename = 'http://127.0.0.1:5000/uploads/' + filename
+    return render_template('template.html', filename=filename)
+    
 @app.route('/pizza')
 def pizzaPage():
     return "pizza"
