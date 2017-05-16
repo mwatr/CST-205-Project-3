@@ -1,0 +1,8 @@
+Project 3
+Team 255
+Alejandro Casillas, Michael Waters, Conrado Aguilar
+
+1 Enter a number(0 - 7)
+2 0 is to exit the game
+3 The rest of the numbers are to change the image 
+4 It is all in a loop so before leaving you have to close it with 0
