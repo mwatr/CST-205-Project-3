@@ -1,15 +1,14 @@
+from PIL import Image, ImageFilter              # This imports a specific section of a library
+from PIL import ImageFont, ImageDraw            # This imports a specific section of a library
 
-from PIL import Image, ImageFilter
-from PIL import ImageFont, ImageDraw
-#Read image
-im = Image.open( '1.png' )
-#Display image
-im.show()
-safe = 1
-image = Image.open('1.png')
-t,a = image.size
-while safe == 1:
-    print 'There is five filters which you can chose from.'
+im = Image.open( '1.png' )                     #This reads the image to allow the program to change it
+
+im.show()                                      #This displays the image 
+safe = 1                                       
+image = Image.open('1.png')                    #This reads the image to allow the program to change it
+t,a = image.size                               #Get the cordinates of the image
+while safe == 1:                               # this is a while loop
+    print 'There is five filters which you can chose from.'            #print displays thinks on the screen
     print 'Type 1 for a SHARPEN filter.'
     print 'Type 2 for a BLUR filter.'
     print 'Type 3 for a EDGE_ENHANCE filter.'
@@ -20,17 +19,17 @@ while safe == 1:
     print 'Type 0 to exit the program.'
     print 'Your x-coordinate of the pic is:',t
     print 'Your y-coordinate of the pic is:',a  
-    number = input('Enter a number: ')
+    number = input('Enter a number: ')             #lets the user input a number
 #Applying a filter to the image
-    if number == 0:
-        safe = 0
+    if number == 0:                                   # this are if statement for what the user enters
+        safe = 0                                #gets out of the while loop
     if number == 1:
-        im_sharp = im.filter( ImageFilter.SHARPEN )
-        #im_sharp.save( 'image_sharpened.jpg', 'JPEG' )
+        im_sharp = im.filter( ImageFilter.SHARPEN )                  #changes the images     
+        im_sharp.save( 'image_sharpened.jpg', 'JPEG' )         #It creates the image with the new filter
     elif number == 2:
-        rad = int(raw_input('Enter how much blur do you want on your pic(1 to 50): '))
-        img2 = im.filter(ImageFilter.GaussianBlur(radius= rad))
-        #im_blur.save('image_Gaublur.jpg', 'JPEG')
+        rad = int(raw_input('Enter how much blur do you want on your pic(1 to 50): '))    #changes the image
+        img2 = im.filter(ImageFilter.GaussianBlur(radius= rad))              #
+        im_blur.save('image_Gaublur.jpg', 'JPEG')
 
     elif number == 3:
         im_edge = im.filter(ImageFilter.EDGE_ENHANCE)
